@@ -1,0 +1,74 @@
+{
+  "Lundi": {
+    "7:10": [],
+    "11:14": [],
+    "16:18": [],
+    "20:22": [{ "id": "S1", "name": "Salsa 1", "price": 10, "jour": 1 }]
+  },
+  "Mardi": {
+    "7:10": [
+      { "id": "S1", "name": "Salsa 1", "price": 10, "jour": 2 },
+      { "id": "K1", "name": "Kiz 1", "price": 10, "jour": 2 },
+      { "id": "S4", "name": "Salsa 4", "price": 40, "jour": 2 }
+    ],
+    "11:14": [
+      { "id": "K2", "name": "Kiz 2", "price": 20, "jour": 2 },
+      { "id": "R3", "name": "Rueda 3", "price": 30, "jour": 2 },
+      { "id": "R4", "name": "Rueda 4", "price": 40, "jour": 2 }
+    ],
+    "16:18": [
+      { "id": "K2", "name": "Kiz 2", "price": 20, "jour": 2 },
+      { "id": "R3", "name": "Rueda 3", "price": 30, "jour": 2 },
+      { "id": "R4", "name": "Rueda 4", "price": 40, "jour": 2 },
+      { "id": "S1", "name": "Salsa 1", "price": 10, "jour": 2 }
+    ],
+    "20:22": [
+      { "id": "K2", "name": "Kiz 2", "price": 20, "jour": 2 },
+      { "id": "R3", "name": "Rueda 3", "price": 30, "jour": 2 }
+    ]
+  },
+  "Mercredi": {
+    "7:10": [],
+    "11:14": [],
+    "16:18": [
+      { "id": "K2", "name": "Kiz 2", "price": 20, "jour": 3 },
+      { "id": "R3", "name": "Rueda 3", "price": 30, "jour": 3 },
+      { "id": "R4", "name": "Rueda 4", "price": 40, "jour": 3 }
+    ],
+    "20:22": [
+      { "id": "K2", "name": "Kiz 2", "price": 20, "jour": 3 },
+      { "id": "R3", "name": "Rueda 3", "price": 30, "jour": 3 }
+    ]
+  },
+  "Jeudi": {
+    "7:10": [
+      { "id": "S1", "name": "Salsa 1", "price": 10, "jour": 4 },
+      { "id": "R2", "name": "Rueda 2", "price": 10, "jour": 4 },
+      { "id": "B3", "name": "Bachatat 3", "price": 30, "jour": 4 }
+    ],
+    "11:14": [{ "id": "S2", "name": "Salsa 2", "price": 20, "jour": 4 }],
+    "16:18": [{ "id": "S2", "name": "Salsa 2", "price": 20, "jour": 4 }],
+    "20:22": [
+      { "id": "K2", "name": "Kiz 2", "price": 20, "jour": 3 },
+      { "id": "R3", "name": "Rueda 3", "price": 30, "jour": 3 }
+    ]
+  },
+  "vendredi": {
+    "7:10": [],
+    "11:14": [],
+    "16:18": [],
+    "20:22": []
+  },
+  "Samedi": {
+    "7:10": [],
+    "11:14": [],
+    "16:18": [],
+    "20:22": []
+  },
+  "Dimanche": {
+    "7:10": [],
+    "11:14": [],
+    "16:18": [],
+    "20:22": []
+  }
+}
