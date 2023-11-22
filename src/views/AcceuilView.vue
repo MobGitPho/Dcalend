@@ -12,7 +12,7 @@
                 <h4>04 dec. 2022 - 19 janv. 2023</h4>
             </div>
             <div class="navr">
-                <span>{{ TotalSom }} £</span><button @click="inscription">
+                <span>{{ TotalSom }} £</span><button @click="inscriptionF">
                     <RouterLink to="/Dcalend/">S'inscrire</RouterLink>
                 </button>
             </div>
@@ -87,6 +87,7 @@
 import { ref } from 'vue';
 //import { useCourStore } from '../stores/cours.js';
 import { useCourStore } from '../stores/danse.js';
+//import router from '../router';
 //import axios from 'axios';
 export default {
 
@@ -124,6 +125,13 @@ export default {
             
         }
 
+        const inscriptionF = function () {
+            localStorage.removeItem("coursChoix");
+            localStorage.clear();
+            activCour.value = coursDb.mesCoursActivChoix
+            mesCours.value = coursDb.mesCours
+        }
+
         return {
             coursDb,
             allCours,
@@ -132,6 +140,7 @@ export default {
             TotalSom,
             activCour,
             uniqHor,
+            inscriptionF,
         }
     }
 }

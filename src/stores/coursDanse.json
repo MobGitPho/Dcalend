@@ -49,8 +49,8 @@
     "11:14": [{ "id": "S2", "name": "Salsa 2", "price": 20, "jour": 4 }],
     "16:18": [{ "id": "S2", "name": "Salsa 2", "price": 20, "jour": 4 }],
     "20:22": [
-      { "id": "K2", "name": "Kiz 2", "price": 20, "jour": 3 },
-      { "id": "R3", "name": "Rueda 3", "price": 30, "jour": 3 }
+      { "id": "K2", "name": "Kiz 2", "price": 20, "jour": 4 },
+      { "id": "R3", "name": "Rueda 3", "price": 30, "jour": 4 }
     ]
   },
   "vendredi": {
