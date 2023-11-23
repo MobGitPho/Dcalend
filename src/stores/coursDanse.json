@@ -43,7 +43,7 @@
   "Jeudi": {
     "7:10": [
       { "id": "S1", "name": "Salsa 1", "price": 10, "jour": 4 },
-      { "id": "R2", "name": "Rueda 2", "price": 10, "jour": 4 },
+      { "id": "R2", "name": "Rueda 2", "price": 20, "jour": 4 },
       { "id": "B3", "name": "Bachatat 3", "price": 30, "jour": 4 }
     ],
     "11:14": [{ "id": "S2", "name": "Salsa 2", "price": 20, "jour": 4 }],

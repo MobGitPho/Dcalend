@@ -28,7 +28,7 @@ export const useCourStore = defineStore('cours', {
       }
       let fndidjh = this.courChoix.find((p) => p.jh == choix.jh)
 
-      console.log('fndidj', fndidjh)
+      //console.log('fndidj', fndidjh)
 
       if (fndidjh != undefined) {
         // Cours deja select donc on verifie son idc jr-hr
@@ -59,7 +59,7 @@ export const useCourStore = defineStore('cours', {
       return resultadd
     },
 
-    mesCoursChoix( act) {
+    mesCoursChoix(act) {
       this.courChoix = localStorage.getItem('coursChoix')
         ? JSON.parse(localStorage.getItem('coursChoix'))
         : []
@@ -82,7 +82,6 @@ export const useCourStore = defineStore('cours', {
       state.fd = state.coursdb
       let fnd = []
       fnd = Object.entries(state.fd)
-      console.log('rese', fnd)
       return fnd
     },
     uniqHoraire: (state) => {
@@ -117,7 +116,7 @@ export const useCourStore = defineStore('cours', {
         : []
       let fnd = state.courChoix.filter((p) => p.activ == 1)
       const dataToReturn = fnd.map((item) => item.idu)
-      
+
       return dataToReturn
     },
     sommeTotal: (state) => {

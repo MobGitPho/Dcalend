@@ -18,7 +18,7 @@
             </div>
 
         </div>
-       
+
         <div class=" row col-12 calend">
             <table>
                 <tr>
@@ -34,7 +34,7 @@
                             <div id="btnline" v-for="(lss, li) in ls[1][hor]" :key="li"
                                 :class="{ 'active': (Object.values(activCour).includes((`${lss.jour}-${key}-${li}`))) }"
                                 @click="addCourChoix(lss, key, li, lss.jour)">
-                                {{ lss.name}}
+                                {{ lss.name }}
                             </div>
                         </td>
                     </tr>
@@ -76,53 +76,40 @@
                     </div>
                 </form>
             </div>
-
         </div>
-
-
     </div>
 </template>
 
 <script>
 import { ref } from 'vue';
-//import { useCourStore } from '../stores/cours.js';
 import { useCourStore } from '../stores/danse.js';
-//import router from '../router';
 //import axios from 'axios';
 export default {
-
-    /* mounted(){
-         axios.get("coursDance.json")
+    /* onBeforeMount(){
+        axios.get("coursDance.json")
              .then((response) => {
-                 this.allCours = response.data
+                 console.log(response); 
  
              });
      },*/
-
     setup() {
 
         const coursDb = useCourStore()
         const allCours = ref([])
         const uniqHor = ref([])
-
-
         const mesCours = ref([])
         let TotalSom = ref(0);
         let activCour = ref([])
-
         allCours.value = coursDb.mesHoraires
         uniqHor.value = coursDb.uniqHoraire
-
         mesCours.value = coursDb.mesCours
         TotalSom.value = coursDb.sommeTotal ? coursDb.sommeTotal : 0
         activCour.value = coursDb.mesCoursActivChoix
-        console.log('activCour',activCour.value);
-
         const addCourChoix = function (cour, hor, cp, jour) {
             mesCours.value = coursDb.addChoixDanse(cour, hor, cp, jour)
             activCour.value = coursDb.mesCoursActivChoix
             TotalSom.value = coursDb.totalSomme(mesCours.value)
-            
+
         }
 
         const inscriptionF = function () {
