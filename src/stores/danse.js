@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
-import coursDance from './coursDanse.json'
-
+//import coursDance from './coursDanse.json'
 export const useCourStore = defineStore('cours', {
-  state: () => ({
-    coursdb: coursDance,
+ state: () => ({
+    //coursdb: coursDance,
+    coursdb:[],
     fd: localStorage.getItem('coursdb') ? JSON.parse(localStorage.getItem('coursdb')) : [],
     courChoix: localStorage.getItem('coursChoix')
       ? JSON.parse(localStorage.getItem('coursChoix'))
@@ -81,11 +81,12 @@ export const useCourStore = defineStore('cours', {
     mesHoraires: (state) => {
       state.fd = state.coursdb
       let fnd = []
-      fnd = Object.entries(state.fd)
+      console.log('state.fd', state.fd)
+      fnd = state.fd ? Object.entries(state.fd) : []
       return fnd
     },
     uniqHoraire: (state) => {
-      state.fd = Object.entries(state.coursdb)
+      state.fd = state.fd ? Object.entries(state.coursdb) : []
       let fnd = []
       let res = []
       fnd = state.fd

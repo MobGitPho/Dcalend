@@ -80,18 +80,43 @@
     </div>
 </template>
 
-<script>
-import { ref } from 'vue';
+<script setup>
+import { onMounted, ref } from 'vue';
 import { useCourStore } from '../stores/danse.js';
-//import axios from 'axios';
-export default {
-    /* onBeforeMount(){
-        axios.get("coursDance.json")
-             .then((response) => {
-                 console.log(response); 
- 
-             });
-     },*/
+import axios from 'axios';
+const coursDb = useCourStore()
+let TotalSom = ref(0)
+let activCour = ref([])
+let allCours = coursDb.mesHoraires
+let uniqHor = coursDb.uniqHoraire
+let mesCours = coursDb.mesCours
+TotalSom.value = coursDb.sommeTotal ? coursDb.sommeTotal : 0
+activCour.value = coursDb.mesCoursActivChoix
+
+onMounted(() => {
+    axios
+        .get("https://raw.githubusercontent.com/MobGitPho/Dcalendjson/main/coursDanse.json")
+        .then(response => (coursDb.coursdb = response.data));
+})
+const addCourChoix = function (cour, hor, cp, jour) {
+    mesCours = coursDb.addChoixDanse(cour, hor, cp, jour)
+    activCour.value = coursDb.mesCoursActivChoix
+    TotalSom.value = coursDb.totalSomme(mesCours)
+
+}
+const inscriptionF = function () {
+    localStorage.removeItem("coursChoix");
+    localStorage.clear();
+    activCour.value = coursDb.mesCoursActivChoix
+    mesCours = coursDb.mesCours
+}
+
+
+/*export default {
+    computed(){
+        this.allCours.value = this.coursDb.mesHoraires
+        console.log('AAZ',this.allCours);
+    },
     setup() {
 
         const coursDb = useCourStore()
@@ -129,8 +154,19 @@ export default {
             uniqHor,
             inscriptionF,
         }
-    }
-}
+    },
+    async created() {
+         try {
+             const res = await axios.get(`coursDanse.json`);
+              this.allCours = res.data;
+             console.log('AllCours',Object.entries(this.allCours))
+             
+         } catch (error) {
+             console.log('error',error);
+         }
+     },
+}*/
+
 </script>
 
 <style lang="scss" scoped>
