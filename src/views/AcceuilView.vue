@@ -91,7 +91,7 @@ let activCour: any = ref([])
 let allCours = coursDb.mesHoraires
 let uniqHor = coursDb.uniqHoraire
 let mesCours = coursDb.mesCours
-TotalSom.valueOf = coursDb.sommeTotal ? coursDb.sommeTotal : 0
+TotalSom.value = coursDb.sommeTotal ? coursDb.sommeTotal : 0
 activCour.value = coursDb.mesCoursActivChoix
 
 onMounted(() => {
@@ -102,7 +102,7 @@ onMounted(() => {
 const addCourChoix = (cour: any, hor: number, cp: number, jour: number) => {
     mesCours = coursDb.addChoixDanse(cour, hor, cp, jour);
     activCour.value = coursDb.mesCoursActivChoix;
-    TotalSom.valueOf = coursDb.totalSomme(mesCours);
+    TotalSom.value = coursDb.totalSomme(mesCours);
 
 }
 const inscriptionF = function () {
