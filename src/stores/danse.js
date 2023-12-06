@@ -16,6 +16,7 @@ export const useCourStore = defineStore('cours', {
   actions: {
     addChoixDanse(tab, hor, courpos, jr) {
       let resultadd = []
+       console.log('hor',hor)
       let choix = {
         ...tab,
         horc: hor,
@@ -81,7 +82,6 @@ export const useCourStore = defineStore('cours', {
     mesHoraires: (state) => {
       state.fd = state.coursdb
       let fnd = []
-      console.log('state.fd', state.fd)
       fnd = state.fd ? Object.entries(state.fd) : []
       return fnd
     },

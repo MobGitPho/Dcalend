@@ -72,7 +72,7 @@
 
                     </div>
                     <div class="buttonsubmit">
-                        <button @click="inscription">Envoyer</button>
+                        <button @click="inscriptionF">Envoyer</button>
                     </div>
                 </form>
             </div>
@@ -80,17 +80,18 @@
     </div>
 </template>
 
-<script setup>
+<script  lang="ts" setup>
 import { onMounted, ref } from 'vue';
 import { useCourStore } from '../stores/danse.js';
 import axios from 'axios';
-const coursDb = useCourStore()
-let TotalSom = ref(0)
-let activCour = ref([])
+
+let coursDb: any = useCourStore()
+let TotalSom: number =ref(0)
+let activCour: any = ref([])
 let allCours = coursDb.mesHoraires
 let uniqHor = coursDb.uniqHoraire
 let mesCours = coursDb.mesCours
-TotalSom.value = coursDb.sommeTotal ? coursDb.sommeTotal : 0
+TotalSom.valueOf = coursDb.sommeTotal ? coursDb.sommeTotal : 0
 activCour.value = coursDb.mesCoursActivChoix
 
 onMounted(() => {
@@ -98,10 +99,10 @@ onMounted(() => {
         .get("https://raw.githubusercontent.com/MobGitPho/Dcalendjson/main/coursDanse.json")
         .then(response => (coursDb.coursdb = response.data));
 })
-const addCourChoix = function (cour, hor, cp, jour) {
-    mesCours = coursDb.addChoixDanse(cour, hor, cp, jour)
-    activCour.value = coursDb.mesCoursActivChoix
-    TotalSom.value = coursDb.totalSomme(mesCours)
+const addCourChoix = (cour: any, hor: number, cp: number, jour: number) => {
+    mesCours = coursDb.addChoixDanse(cour, hor, cp, jour);
+    activCour.value = coursDb.mesCoursActivChoix;
+    TotalSom.valueOf = coursDb.totalSomme(mesCours);
 
 }
 const inscriptionF = function () {
